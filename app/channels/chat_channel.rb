@@ -16,6 +16,12 @@ class ChatChannel < ApplicationCable::Channel
   # user types a message and hits enter, we can call App.chat.speak on the client
   # side, which in turn invokes this action on the server.
   def speak(data)
-    ActionCable.server.broadcast('chat_channel', message: data['message'])
+    ActionCable.server.broadcast('chat_channel', message: render_message(data['message']))
+  end
+
+  private
+
+  def render_message(message)
+    ApplicationController.render(partial: 'messages/message', locals: { message: message })
   end
 end

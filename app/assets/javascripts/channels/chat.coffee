@@ -3,7 +3,7 @@ App.chat = App.cable.subscriptions.create 'ChatChannel',
   # When we broadcast to the channel, all the clients connected to the
   # channel will receive the data and call the App.chat.received function
   received: (data) ->
-    $('#messages').append("<p>#{data['message']}</p>")
+    $('#messages').append(data['message'])
 
   speak: (message) ->
     @perform('speak', message: message)

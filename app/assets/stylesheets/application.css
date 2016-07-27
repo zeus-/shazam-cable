@@ -13,3 +13,159 @@
  *= require_tree .
  *= require_self
  */
+
+
+@import url(http://weloveiconfonts.com/api/?family=typicons);
+[class*="typicons-"]:before {
+  font-family: 'Typicons', sans-serif;
+}
+
+body {
+background: #9BD7D5;
+}
+
+.module {
+  width: 450px;
+  margin: 40px 0 0 40px
+}
+
+.top-bar {
+  font-family: fantasy;
+  background: #666;
+  color: white;
+  padding: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.top-bar h1 {
+  display: inline;
+  font-size: 1.1rem;
+}
+.top-bar .typicons-message {
+  display: inline-block;
+  padding: 4px 5px 2px 5px;
+  top: 4px;
+    position: relative;
+}
+.top-bar .typicons-minus {
+  position: relative;
+  top: 3px;
+}
+.top-bar .left {
+  float: left;
+}
+.top-bar .right {
+  float: right;
+  padding-top: 5px;
+}
+.top-bar > * {
+  position: relative;
+}
+.top-bar::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  right: 0;
+  bottom: -100%;
+  opacity: 0.25;
+  background: radial-gradient(#ffffff, #000000);
+  animation: pulse 1s ease alternate infinite;
+}
+
+#messages {
+  list-style: none;
+  background: #FFF5C3;
+  margin: 0;
+  padding: 0 0 50px 0;
+  min-height: 350px;
+}
+#messages li {
+  padding: 0.3rem;
+  overflow: hidden;
+  display: flex;
+}
+#messages .avatar {
+  width: 47px;
+  margin-right: 9px;
+  margin-top: 2px;
+  position: relative
+}
+#messages .avatar img {
+  display: block;
+  width: 100%;
+}
+
+.message-container .avatar:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border: 5px solid white;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.self {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.self .message {
+  order: 1;
+  border-bottom-right-radius: 0;
+}
+.self .avatar {
+  order: 2;
+}
+.self .avatar:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: 5px solid white;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+input {
+  width: 437px;
+  height: 30px;
+  font-size: 24px;
+  padding-left: 6px;
+  border: 3px solid #FFF5C3;
+}
+
+.message {
+  width: 300px;
+  background: white;
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.message p {
+  font-size: 0.8rem;
+  margin: 0 0 0.2rem 0;
+}
+.message time {
+  font-size: 0.5rem;
+  color: #ccc;
+}
+
+li:first-child {
+  padding-top: 16px !important;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
