@@ -26,7 +26,8 @@ background: #9BD7D5;
 
 .module {
   width: 450px;
-  margin: 40px 0 0 40px
+  margin: 40px 0 0 40px;
+  box-shadow:3px 3px 5px 0px rgba(0,0,0, 0.20);
 }
 
 .top-bar {

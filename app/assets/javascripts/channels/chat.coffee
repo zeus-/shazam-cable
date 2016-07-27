@@ -1,9 +1,9 @@
-# A consumer becomes a subscriber by creating a subscription to a given channel
+# A client becomes a subscriber by creating a subscription to a given channel
 App.chat = App.cable.subscriptions.create 'ChatChannel',
   # When we broadcast to the channel, all the clients connected to the
   # channel will receive the data and call the App.chat.received function
   received: (data) ->
-    $('#messages').append(data['message'])
+    $('#messages').append(data['message_template'])
 
   speak: (message) ->
     @perform('speak', message: message)
